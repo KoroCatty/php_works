@@ -193,9 +193,12 @@ if (!$mysqli) {
 
      <div class="row">   <!--車の列 -->
       	<?php
-        // get featured cars from the database    
+        // get featured cars from the database randomly pick 6 cars
         // DBのcar内のcarFeaturedとcarActiveStatusが　”Y”　に指定されてるものを表示する
-      	$query = "SELECT * FROM cars WHERE carFeatured = 'Y';";
+      	$query = "SELECT * FROM cars WHERE carFeatured = 'Y' ORDER BY RAND() LIMIT 6;";
+   
+
+        // select top([レコード取得件数]) [列名] from [テーブル名] order by NEWID()
 
         // run the query DBに接続したら、SQLを実行することができます。シンプルな SQLを使う場合は queryメソッドが便利。
         // 構文　　$results = $mysql->query('SELECT * FROM items');
@@ -213,17 +216,18 @@ if (!$mysqli) {
 	            <div class="img-box">
 	            	<?php
                 // display car image
-	              echo '<img src="images/cars/'.$row['carID'].'.jpeg" alt="">';//echoで出力し、images/car内のcarIDによって表示させる画像を変えている
+	              echo '<img src="images/cars/'.$row['carID'].'.jpeg" alt="">';
+                //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
 	              ?>
 
 	              <?php
                 // set correct  url for deatils.php using the car ID
                 //aタグで違うページに行く際に、$rowに格納されたcarIDを出力する
-                echo '<a href="details.php?id='.$row['carID'].'" class="add_cart_btn">'; ?>
-	                <span>
-	                  View Details
-	                </span>
-	              </a>
+                // echo '<a href="details.php?id='.$row['carID'].'" class="add_cart_btn">'; ?>
+	              <!-- //   <span>
+	              //     View Details
+	              //   </span> -->
+	          </a>
 	            </div>
 
 	           <div class="detail-box">  <!-- 車名や値段など書かれているセクション -->
@@ -264,13 +268,13 @@ if (!$mysqli) {
                 <?php 
                 // set correct  url for order.php using the car ID
                 //orderページに飛ばすが、carIDに基づいて飛ばす。$rowは上でフェッチしたもの。
-                echo '<a href="order.php?id='.$row['carID'].'" class="view_more-link" style="margin-right: 5px;">'; 
+                echo '<a href="" class="view_more-link" style="margin-right: 5px;">'; 
                 ?>
                   Book Now
                 </a> 
                <?php 
                // set correct  url for inquire.php using the car ID
-               echo '<a href="inquire.php?id='.$row['carID'].'" class="view_more-link" style="margin-left: 5px;">'; 
+               echo '<a href="" class="view_more-link" style="margin-left: 5px;">'; 
                ?>
                   Inquire
                 </a>

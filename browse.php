@@ -105,14 +105,14 @@ if (!$mysqli) {
                   ?>
 
                   <?php
-                  // set correct  url for deatils.php using the car ID
-                  //aタグで違うページに行く際に、$rowに格納されたcarIDを出力する
-                  echo '<a href="details.php?id=' . $row['carID'] . '" class="add_cart_btn">';
-                  ?>
-                  <span>
-                    View Details
-                  </span>
-                  </a>
+                  // // set correct  url for deatils.php using the car ID
+                  // //aタグで違うページに行く際に、$rowに格納されたcarIDを出力する
+                  // echo '<a href="details.php?id=' . $row['carID'] . '" class="add_cart_btn">';
+                  // ?>
+                  <!-- <span>
+                  View Details
+               </span>
+                  </a> -->
                 </div>
 
                 <div class="detail-box">
@@ -156,7 +156,7 @@ if (!$mysqli) {
                   <?php
                   // set correct  url for order.php using the car ID
                   //order.phpページに飛ばすが、carIDに基づいて飛ばす。$rowは上でフェッチしたもの。
-                  echo '<a href="order.php?id=' . $row['carID'] . '" class="view_more-link" style="margin-right: 5px;">';
+                  echo '<a href="" class="view_more-link" style="margin-right: 5px;">';
                   ?>
                   Book Now
                   </a>

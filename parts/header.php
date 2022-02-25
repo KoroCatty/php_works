@@ -46,8 +46,11 @@
                 if ($_SESSION['login'] == 'customer') {
                 ?>
                   <li id="index-search" class="nav-item">
-                    <h2 style="color:white;">ログインしてくれてありがとう</h2>
+                    <!-- <h2 style="color:white;"></h2> -->
                   </li>
+                  <div style="color:white; width:100px;" class="loggedin">logged In</div>
+
+
                   <li id="index-home" class="nav-item">
                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
@@ -60,6 +63,7 @@
                   <li id="index-contact" class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
+                
                 <?php
                 }
 
@@ -104,7 +108,6 @@
 
               // if you are logged in show 'logout' option only
               if (isset($_SESSION['login'])) { //もしログイン状態がTRUEなら⇓を実行しろ
-
                 ?>
                 <li class="nav-item">
                   <a class="nav-link" href="logout.php">Logout</a> <!-- ログアウトのページに飛ぶ。 -->
