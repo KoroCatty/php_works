@@ -1,0 +1,6 @@
+DB Username Admin
+PASS Password
+
+npm install laravel-mix --save-dev
+
+To start   npx mix watch
