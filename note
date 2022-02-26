@@ -1,5 +1,4 @@
-DB Username Admin
-PASS Password
+DBName car-php
 
 npm install laravel-mix --save-dev
 

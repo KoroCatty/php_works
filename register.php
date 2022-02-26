@@ -9,6 +9,11 @@ session_start();
  $dbpass = "root";
  $db = "car-php";
 
+//  $server = "sql206.epizy.com";
+// $username = "epiz_31157109";
+// $password = "b3XC96GKERoUO1y";
+// $dbname = "epiz_31157109_kay_php";
+
 // Create connection
 $mysqli = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 

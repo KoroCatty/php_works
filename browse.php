@@ -5,6 +5,12 @@ $dbuser = "root";
 $dbpass = "root";
 $db = "car-php";
 
+// server接続用
+// $dbhost = "sql206.epizy.com";
+// $dbuser = "epiz_31157109";
+// $dbpass = "b3XC96GKERoUO1y";
+// $db = "epiz_31157109_kay_php";
+
 // Create connection
 $mysqli = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 

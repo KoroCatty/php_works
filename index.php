@@ -1,10 +1,16 @@
 <?php
 session_start(); 
-
+// for local server
  $dbhost = "localhost";//ホスト名またはIPアドレス
  $dbuser = "root";//MySQLのユーザー名
  $dbpass = "root";//$usernameのパスワード
  $db = "car-php";
+
+// server接続用
+// $dbhost = "sql206.epizy.com";
+// $dbuser = "epiz_31157109";
+// $dbpass = "b3XC96GKERoUO1y";
+// $db = "epiz_31157109_kay_php";
 
 // Create connection
 $mysqli = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
@@ -30,7 +36,11 @@ if (!$mysqli) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
+  
+  
   <link rel="icon" href="images/fevicon.png" type="image/gif" />   <!-- オリジナルの（Favicon）を指定することができます。 -->
+
+
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" /><!-- ホームページのファイル（HTMLファイル）に書く「このページは誰々さんが作りました」な情報のこと -->
@@ -47,11 +57,10 @@ if (!$mysqli) {
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
-  <!-- レスポンシブと普通のCSSはこのように分けてやると良い。 -->
   <!-- Custom styles for this template -->
 <!-- 下記のようにするとcashe に関係なく常に最新のｃｓｓのコードが読まれる (ただしファイル名を.phpにせなあかん)-->
   <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
-
+  
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
