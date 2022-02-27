@@ -52,7 +52,7 @@ if (!$mysqli) {
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -299,8 +299,8 @@ if (!$mysqli) {
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
+ <!-- app. js -->
+ <script src="dist/app.js"></script>
 
   <script type="text/javascript">
 

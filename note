@@ -1,5 +1,5 @@
-DBName car-php
+/* DBName car-php
 
 npm install laravel-mix --save-dev
 
-To start   npx mix watch
+To start   npx mix watch */

@@ -20,7 +20,6 @@ if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -59,10 +58,10 @@ if (!$mysqli) {
 
   <!-- Custom styles for this template -->
 <!-- 下記のようにするとcashe に関係なく常に最新のｃｓｓのコードが読まれる (ただしファイル名を.phpにせなあかん)-->
-  <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
+  <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
   
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
 </head>
 
@@ -111,7 +110,7 @@ if (!$mysqli) {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-1.jpeg" alt="">
+                    <img src="dist/images/slider-1.jpeg" alt="">
                   </div>
                 </div>
               </div>
@@ -137,7 +136,7 @@ if (!$mysqli) {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-2.jpeg" alt="">
+                    <img src="dist/images/slider-2.jpeg" alt="">
                   </div>
                 </div>
               </div>
@@ -163,7 +162,7 @@ if (!$mysqli) {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-3.jpeg" alt="">
+                    <img src="dist/images/slider-3.jpeg" alt="">
                   </div>
                 </div>
               </div>
@@ -225,7 +224,7 @@ if (!$mysqli) {
 	            <div class="img-box">
 	            	<?php
                 // display car image
-	              echo '<img src="images/cars/'.$row['carID'].'.jpeg" alt="">';
+	              echo '<img src="dist/images/cars/'.$row['carID'].'.jpeg" alt="">';
                 //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
 	              ?>
 
@@ -341,7 +340,7 @@ We hope you enjoy our range of vehicle as much as we enjoy offering them to you.
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box">
-            <img src="images/about-img.jpeg" alt="">
+            <img src="dist/images/about-img.jpeg" alt="">
           </div>
         </div>
       </div>
@@ -416,9 +415,9 @@ We hope you enjoy our range of vehicle as much as we enjoy offering them to you.
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-
+ 
+ <!-- app. js -->
+ <script src="dist/app.js"></script>
 
 </body>
 

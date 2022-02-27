@@ -29,7 +29,8 @@ session_start();
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <!-- <link href="css/style.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -79,7 +80,7 @@ We hope you enjoy our range of vehicle as much as we enjoy offering them to you.
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box">
-            <img src="images/about-img.jpeg" alt="">
+            <img src="dist/images/about-img.jpeg" alt="">
           </div>
         </div>
       </div>
@@ -100,8 +101,8 @@ We hope you enjoy our range of vehicle as much as we enjoy offering them to you.
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
+ <!-- app. js -->
+ <script src="dist/app.js"></script>
 
 
 </body>

@@ -49,7 +49,7 @@ if (!$mysqli) {
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -107,7 +107,7 @@ if (!$mysqli) {
                 <div class="img-box">
                   <?php
                   // display car image
-                  echo '<img src="images/cars/' . $row['carID'] . '.jpeg" alt="">'; //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
+                  echo '<img src="dist/images/cars/' . $row['carID'] . '.jpeg" alt="">'; //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
                   ?>
 
                   <?php
@@ -205,8 +205,8 @@ if (!$mysqli) {
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
+ <!-- app. js -->
+ <script src="dist/app.js"></script>
 
 
 </body>
