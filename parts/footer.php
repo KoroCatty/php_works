@@ -7,7 +7,7 @@
           <h5>
             <a href="" class="navbar-brand">
               <span>
-                ABC Car Fleets (Pvt.) Ltd.
+                ABC Car Fleets
               </span>
             </a>
           </h5>
@@ -38,7 +38,7 @@
       <div class="col-md-2">
         <div class="info_links">
           <h5>
-            Useful Link
+           Link
           </h5>
           <ul>
             <li>
