@@ -1,8 +1,7 @@
-// @import "_setting";
 @import "_bootstrap";
 
 
-// 初めに色の定義をしておく
+// 色の定義
 $white: #ffffff;
 $black: #000000;
 $primary1: #f3c93e;
@@ -541,7 +540,6 @@ a:focus {
     .star_container {
       // color: #f2b01e;
       color: #7c7c7c;
-
     }
 
     &:hover {

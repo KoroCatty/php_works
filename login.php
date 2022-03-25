@@ -1,4 +1,4 @@
-<!-- このログインページは他にも代用できそう。 -->
+
 <?php
 
 session_start(); 
@@ -183,7 +183,7 @@ if (!$mysqli) {
     <input type="submit" value="Login" name="submit">
 
     <div class="container signin">
-      <p>Don't have an account? <a href="#">Register</a>.</p>
+      <p>Don't have an account? <a href="register.php">Register</a>.</p>
     </div>
 
   </form>

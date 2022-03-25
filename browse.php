@@ -31,9 +31,9 @@ if (!$mysqli) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
- <!-- オリジナルの（Favicon）を指定 -->
- <link rel="icon" href="dist/images/favicon.png" type="image/gif" />   
-  
+  <!-- オリジナルの（Favicon）を指定 -->
+  <link rel="icon" href="dist/images/favicon.png" type="image/gif" />
+
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
@@ -49,12 +49,10 @@ if (!$mysqli) {
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
   <!-- font awesome style -->
-  <!-- <link href="css/font-awesome.min.css" rel="stylesheet" /> -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
   <!-- responsive style -->
-  <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
 </head>
 
@@ -67,7 +65,7 @@ if (!$mysqli) {
   include("parts/header.php");
   ?>
 
-  <!-- このコードで選択中のページ（この場合Home）のヘッダー内の色を変える。 -->
+  <!-- 選択中のページのヘッダー内の色を変える -->
   <script type="text/javascript">
     // make the corresponding navigation tab active
     var element = document.getElementById("index-browse");
@@ -89,19 +87,19 @@ if (!$mysqli) {
       </div>
 
       <div class="row">
-        <!-- flexを入れるためのrow -->
         <?php
-        // get all the cars from the database　　DBのcarsテーブルから全てのcarを取り出す
+        // get all the cars from the database　DBのcarsテーブルから全てのcarを取り出す
         $query = "SELECT * FROM cars;";
 
         // run the query
-        $result = $mysqli->query($query); //上のやつをここで実行して、$resultに格納する
+        $result = $mysqli->query($query); //上記をここで実行して、$resultに格納する
 
-        // if there are cars in the database ....もし車がDB内にあったら、⇓を実行する
+        // if there are cars in the database ....もし車がDB内にあれば⇓を実行
         if ($result->num_rows > 0) {
 
           // loop through all the  rows
-          while ($row = $result->fetch_assoc()) { //$rowに(loop through)フェッチしたものを格納？　mysqli_fetch_assoc() function fetches a result row as an associative array.
+          while ($row = $result->fetch_assoc()) {
+            //$rowに(loop through)フェッチしたものを格納　mysqli_fetch_assoc() function fetches a result row as an associative array.
         ?>
 
             <div class="col-sm-6 col-lg-4">
@@ -110,18 +108,10 @@ if (!$mysqli) {
                 <div class="img-box">
                   <?php
                   // display car image
-                  echo '<img src="dist/images/cars/' . $row['carID'] . '.jpeg" alt="">'; //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
+                  // images/car内のcarIDによって表示させる画像を変更
+                  echo '<img src="dist/images/cars/' . $row['carID'] . '.jpeg" alt="">';
                   ?>
 
-                  <?php
-                  // // set correct  url for deatils.php using the car ID
-                  // //aタグで違うページに行く際に、$rowに格納されたcarIDを出力する
-                  // echo '<a href="details.php?id=' . $row['carID'] . '" class="add_cart_btn">';
-                  // ?>
-                  <!-- <span>
-                  View Details
-               </span>
-                  </a> -->
                 </div>
 
                 <div class="detail-box">
@@ -129,7 +119,8 @@ if (!$mysqli) {
                   <h5>
                     <?php
                     // display car make and car model as the title
-                    echo $row["carMake"] . " " . $row["carModel"]; //車のメーカーやモデルをここで出力している  ex)Toyota  Yaris
+                    //車のメーカーやモデルをここで出力  ex)Toyota  Yaris
+                    echo $row["carMake"] . " " . $row["carModel"];
                     ?>
                   </h5>
 
@@ -137,23 +128,23 @@ if (!$mysqli) {
                     <h5>
                       <span>$</span>
                       <?php
-                      // display the car price
-                      echo $row["carPrice"]; //車の値段をここで表示している
+                      // display the car price //車の値段
+                      echo $row["carPrice"];
                       ?>
                     </h5>
 
                     <div class="star_container">
                       Condition:
                       <?php
-                      // show whether it is a used car or a new car 
-                      echo $row["carStatus"]; // Used かNewをここで表示している。
+                      // show whether it is a used car or a new car  // Used かNewか
+                      echo $row["carStatus"];
                       ?>
                       <br>
 
                       Colour:
                       <?php
-                      // display the colour of the car
-                      echo $row["carColour"]; //車の色を表示する
+                      // display the colour of the car//車の色を表示
+                      echo $row["carColour"];
                       ?>
                     </div>
                   </div>
@@ -164,7 +155,7 @@ if (!$mysqli) {
                   <!--二つのボタンの箱 -->
                   <?php
                   // set correct  url for order.php using the car ID
-                  //order.phpページに飛ばすが、carIDに基づいて飛ばす。$rowは上でフェッチしたもの。
+                  //carIDに基づいてorder.phpページに飛ばす。$rowは上でフェッチしたもの。
                   echo '<a href="" class="view_more-link" style="margin-right: 5px;">';
                   ?>
                   Book Now
@@ -177,11 +168,7 @@ if (!$mysqli) {
             </div>
         <?php
           }
-        }
-        // if there are no cars in the database ...
-        //  上で、DBのcar内のcarFeaturedとcarActiveStatusが　”Y”　に指定されてるものを表示する　をしているが、
-        // もしfeaturedの車がなかったらelseで⇓が実行される
-        else {
+        } else {
           echo "<h5>
                     No Cars are being rented out at the moment.
                 </h5>";
@@ -208,8 +195,8 @@ if (!$mysqli) {
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
- <!-- app. js -->
- <script src="dist/app.js"></script>
+  <!-- app. js -->
+  <script src="dist/app.js"></script>
 
 
 </body>

@@ -5,7 +5,8 @@ session_start();
 $_SESSION = array();
 //sessionにcookieを使うかどうかを設定するファイル
 if (ini_get('session.use_cookies')){
-  // cookieの情報を削除するためのコード  cookieの有効期限を切ることで、sessionを削除するというしくみ
+  // cookieの情報を削除するためのコード  
+  // cookieの有効期限を切ることで、sessionを削除する
   $params = session_get_cookie_params();
   setcookie(
     session_name() . '',

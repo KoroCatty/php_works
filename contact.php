@@ -29,7 +29,6 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
 
   <!-- font awesome style -->
-  <!-- <link href="css/font-awesome.min.css" rel="stylesheet" /> -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="dist/main.css?<?php echo time(); ?>">
@@ -45,10 +44,10 @@ session_start();
 
     <?php 
     // include navigation
-    include("parts/header.php");//ヘッダーの使いまわしファイル
+    include("parts/header.php");
     ?>
 
-<!-- このコードで選択中のページ（この場合contact us）のヘッダー内の色を変える。 -->
+<!-- 選択中のページのヘッダー内の色を変える。 -->
     <script type="text/javascript">
       // make the corresponding navigation tab active
       var element = document.getElementById("index-contact");
@@ -67,7 +66,7 @@ session_start();
         </h2>
       </div>
 
-      <div class="row"><!-- flexを入れるためのrow -->
+      <div class="row">
         <div class="container">
   <form action="action_page.php">
 
@@ -79,18 +78,6 @@ session_start();
 
     <label for="email">Email</label>
     <input type="email" id="emailname" name="email" placeholder="Your email..">
-
-    <!-- <label for="state">State</label>
-    <select id="state" name="state">
-      <option value="ACT">ACT</option>
-      <option value="NSW">NSW</option>
-      <option value="NT">NT</option>
-      <option value="QLD">QLD</option>
-      <option value="SA">SA</option>
-      <option value="TAS">TAS</option>
-      <option value="VIC">VIC</option>
-      <option value="WA">WA</option>
-    </select> -->
 
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
@@ -104,13 +91,11 @@ session_start();
      
     </div>
   </section>
-
   <!-- end contact section -->
 
-  <!-- footer section -->
-<!-- フッターの使いまわしファイル -->
-  <?php include("parts/footer.php"); ?>
 
+  <!-- footer section -->
+  <?php include("parts/footer.php"); ?>
   <!-- end footer section -->
 
 

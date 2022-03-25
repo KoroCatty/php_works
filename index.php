@@ -97,7 +97,7 @@ if (!$mysqli) {
                     </a>
                   </div>
                 </div>
-                
+
                 <div class="col-md-6">
                   <div class="img-box slider-img">
                     <img class="" src="dist/images/slider-1.jpeg" alt="">
@@ -115,7 +115,7 @@ if (!$mysqli) {
                 <div class="col-md-6">
                   <div class="detail-box">
                     <h1 class="detail-box__title">
-                       History
+                      History
                     </h1>
                     <p class="top-lines">
                       Founded in 2007 by Kojima, ABC Car Fleets (Pvt). Ltd. has come a long way from its beginnings in Melbourne. When Kojima first started out, his passion for cars drove him to start his own business.
@@ -196,7 +196,7 @@ if (!$mysqli) {
         // DBのcar内のcarFeaturedとcarActiveStatusが　”Y”　に指定されてるものをランダムに表示
         $query = "SELECT * FROM cars WHERE carFeatured = 'Y' ORDER BY RAND() LIMIT 6;";
 
-        // run the query DBに接続したら、SQLを実行することができます。シンプルな SQLを使う場合は queryメソッドが便利。
+        // run the query DBに接続したら、SQLの実行が可能。シンプルな SQLは queryメソッドを使用
         // 構文　　$results = $mysql->query('SELECT * FROM items');
         $result = $mysqli->query($query);
 
@@ -214,26 +214,19 @@ if (!$mysqli) {
                   <?php
                   // display car image
                   echo '<img src="dist/images/cars/' . $row['carID'] . '.jpeg" alt="">';
-                  //echoで出力し、images/car内のcarIDによって表示させる画像を変えている
+                  //echoで出力し、images/car内のcarIDによって表示させる画像を変更
                   ?>
-
-                  <?php
-                  // set correct  url for deatils.php using the car ID
-                  //aタグで違うページに行く際に、$rowに格納されたcarIDを出力する
-                  // echo '<a href="details.php?id='.$row['carID'].'" class="add_cart_btn">'; 
-                  ?>
-                  <!-- //   <span>
-	              //     View Details
-	              //   </span> -->
-                  </a>
                 </div>
 
+
                 <div class="detail-box">
-                  <!-- 車名や値段など書かれているセクション -->
+                  <!-- 車名や値段などのセクション -->
                   <h5>
                     <?php
                     // display car make and car model as the title
-                    echo $row["carMake"] . " " . $row["carModel"]; //車のメーカーやモデルをここで出力している  ex)Toyota  Yaris
+                    //車のメーカーやモデルをここで出力  ex)Toyota  Yaris
+                    echo $row["carMake"] . " " . $row["carModel"]; 
+                    
                     ?>
                   </h5>
 
@@ -242,22 +235,22 @@ if (!$mysqli) {
                       <span>$</span>
                       <?php
                       // display the car price
-                      echo $row["carPrice"]; //車の値段をここで表示している
+                      echo $row["carPrice"]; 
                       ?>
                     </h5>
 
                     <div class="star_container">
                       Condition:
                       <?php
-                      // show whether it is a used car or a new car 
-                      echo $row["carStatus"]; // Used かNewをここで表示している。
+                      // show whether it is a used car or a new car. Used かNew
+                      echo $row["carStatus"];
                       ?>
                       <br>
 
                       Colour:
                       <?php
-                      // display the colour of the car
-                      echo $row["carColour"];  //車の色を表示する
+                      // display the colour of the car　車の色を表示する
+                      echo $row["carColour"];  
                       ?>
                     </div>
                   </div>
@@ -266,7 +259,7 @@ if (!$mysqli) {
                 <div class="btn_box">
                   <?php
                   // set correct  url for order.php using the car ID
-                  //orderページに飛ばすが、carIDに基づいて飛ばす。$rowは上でフェッチしたもの。
+                  // carIDに基づいて orderページに飛ばす。$rowは上でフェッチしたもの
                   echo '<a href="" class="view_more-link" style="margin-right: 5px;">';
                   ?>
                   Book Now
@@ -284,8 +277,7 @@ if (!$mysqli) {
           }
         }
         // if no cars are featured ... 
-        //  上で、DBのcar内のcarFeaturedとcarActiveStatusが　”Y”　に指定されてるものを表示する　をしているが、
-        // もしfeaturedの車がなかったらelseで⇓が実行される
+        //  上で、DBのcar内のcarFeaturedとcarActiveStatusが　”Y”　に指定されてるものを表示をしているが、もしfeaturedの車がなかったらelseで⇓が実行される
         else {
           echo "<h5>
                     No Cars are featured at the moment.
@@ -294,7 +286,7 @@ if (!$mysqli) {
         ?>
       </div>
 
-      <!-- View Moreのボタンを押したらbrowse.phpのページに飛ぶ。最初はAjaxと思っていた。 -->
+      <!-- browse.phpのページに遷移 -->
       <div class="btn_box">
         <a href="browse.php" class="view_more-link">
           View More
@@ -309,8 +301,8 @@ if (!$mysqli) {
 
   <section class="about_section">
     <div class="container-fluid  ">
+       <!-- コンテナ内をflex -->
       <div class="row">
-        <!-- コンテナ内をflexにするためにこのrowのdivを作っている。 -->
         <div class="col-md-5 ml-auto">
           <div class="detail-box pr-md-3">
             <div class="heading_container">
@@ -330,7 +322,7 @@ if (!$mysqli) {
             </a>
           </div>
         </div>
-        <div class="col-md-6 px-0" >
+        <div class="col-md-6 px-0">
           <div class="img-box">
             <img src="dist/images/about-img.jpeg" alt="">
           </div>
@@ -354,7 +346,6 @@ if (!$mysqli) {
       </div>
 
       <div class="row">
-        <!-- コンテナ内をflexにするためにこのrowのdivを作っている。 -->
         <div class="container">
           <form action="action_page.php">
 
@@ -367,17 +358,6 @@ if (!$mysqli) {
             <label for="email">Email</label>
             <input type="email" id="emailname" name="email" placeholder="Your email..">
 
-            <!-- <label for="state">State</label>
-    <select id="state" name="state">
-      <option value="ACT">ACT</option>
-      <option value="NSW">NSW</option>
-      <option value="NT">NT</option>
-      <option value="QLD">QLD</option>
-      <option value="SA">SA</option>
-      <option value="TAS">TAS</option>
-      <option value="VIC">VIC</option>
-      <option value="WA">WA</option>
-    </select> -->
 
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
@@ -398,13 +378,11 @@ if (!$mysqli) {
 
 
   <!-- footer section -->
-
   <?php include("parts/footer.php"); ?>
-  <!-- footerは使いまわしするので、これでフッターページを使いまわしする -->
-
   <!-- end footer section -->
 
 
+  
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
